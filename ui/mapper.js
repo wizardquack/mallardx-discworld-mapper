@@ -175,7 +175,9 @@ panel.on("room_info", (frame) => {
 });
 
 // Signal readiness; Lua replays last_payload if it has one.
-panel.post("ready");
+// plugin_panel_post requires a non-null data arg — empty object is the convention
+// established by showcase + discworld-chat.
+panel.post("ready", {});
 
 // Initial draw so the placeholder header renders.
 redraw();
