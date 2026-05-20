@@ -10,7 +10,7 @@ v0.1.0 — first release. Renders the current map tile + player marker via `room
 
 This plugin redistributes:
 
-- Map PNG bundle (`ui/maps/*.png`) — © Quow, used with explicit written permission (correspondence dated YYYY-MM-DD; placeholder until permission lands).
+- Map PNG bundle (`ui/maps/*.png`) — © Quow, used with explicit written permission (correspondence dated 2026-05-20).
 - Room dictionary (`ui/data/rooms.js`) — derived from Quow's `_quowmap_database.db`, same permission.
 
 Source: https://quow.co.uk/ (`quow_cowbar.zip`). The data is converted at build time by `scripts/build-room-db.mjs`; original files are not redistributed verbatim.
