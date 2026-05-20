@@ -1,0 +1,17 @@
+{
+  "name": "mallard-discworld-mapper",
+  "version": "0.1.0",
+  "description": "Discworld minimap plugin for Mallard — read-only Quow-parity visuals.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:rooms": "node scripts/build-room-db.mjs",
+    "test": "vitest run",
+    "plugin:reinstall": "bash scripts/reinstall.sh"
+  },
+  "devDependencies": {
+    "adm-zip": "^0.5.10",
+    "better-sqlite3": "^11.5.0",
+    "vitest": "^2.1.0"
+  }
+}
