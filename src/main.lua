@@ -17,10 +17,13 @@ local function post_room(payload)
   })
 end
 
-gmcp.on("room.info", function(payload)
-  if type(payload) ~= "table" then return end
-  last_payload = payload
-  post_room(payload)
+-- Note: gmcp.on callback signature is (pkg, data) — the first arg is the
+-- package name string, the second is the parsed payload table. Easy to miss
+-- since some host APIs pass payload-only.
+gmcp.on("room.info", function(_pkg, data)
+  if type(data) ~= "table" then return end
+  last_payload = data
+  post_room(data)
 end)
 
 -- Iframe-ready handshake (custom-HTML panels use "ready"; the "__ready__"

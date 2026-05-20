@@ -30,15 +30,15 @@ function swapImage(next) {
   const meta = data.maps[next.mapId];
   if (!meta) { currentImage = null; currentRoomsForMap = []; return; }
   const img = new Image();
+  // Tentative bind so a later swap can supersede us before onload fires.
+  currentImage = img;
   img.onload = () => {
-    if (currentImage === img) return; // race guard
-    currentImage = img;
+    // Race guard: if a newer swap happened while we were loading, bail.
+    if (currentImage !== img) return;
     indexRoomsForMap(next.mapId);
     redraw();
   };
   img.src = `maps/${meta.file}`;
-  // Tentatively bind so the race-guard above works
-  currentImage = img;
   $canvas.classList.remove("dimmed");
 }
 
