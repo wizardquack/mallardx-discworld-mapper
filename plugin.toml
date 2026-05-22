@@ -1,6 +1,6 @@
 id = "net.mallard.discworld-mapper"
 name = "Discworld Mapper"
-version = "0.1.0"
+version = "0.1.1"
 language = "lua"
 entry = "src/main.lua"
 mallard_api_version = "1.0"
@@ -10,6 +10,9 @@ license = "MIT"
 
 [worlds]
 match = ["discworld.starturtle.net:*"]
+
+[permissions]
+gmcp_access = ["char.info", "room.info"]
 
 [gmcp]
 advertise = ["char.info", "room.info"]
