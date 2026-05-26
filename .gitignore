@@ -2,3 +2,5 @@ node_modules/
 .DS_Store
 # Temp dirs the build script writes to (it uses os.tmpdir; this guard is belt-and-braces)
 /tmp/
+/reference/
+/.claude/
