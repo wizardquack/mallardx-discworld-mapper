@@ -1,6 +1,6 @@
 id = "net.mallard.discworld-mapper"
 name = "Discworld Mapper"
-version = "0.1.1"
+version = "0.1.2"
 language = "lua"
 entry = "src/main.lua"
 mallard_api_version = "1.0"
