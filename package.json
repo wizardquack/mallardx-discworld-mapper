@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "build:rooms": "node scripts/build-room-db.mjs",
-    "test": "vitest run",
-    "plugin:reinstall": "bash scripts/reinstall.sh"
+    "test": "vitest run"
   },
   "devDependencies": {
     "adm-zip": "^0.5.10",
