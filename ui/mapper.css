@@ -1,7 +1,13 @@
+/* `--bg`, `--fg`, `--accent` are pushed live by the Mallard host via `set-theme`
+ * into the iframe's :root inline style; the values below are first-paint
+ * fallbacks (and the standalone-browser preview palette). `--muted` is a
+ * plugin-only token routed through the host's `--fg-muted`. `--marker` stays
+ * fixed because it's the "you are here" canvas indicator — visual identity,
+ * not theme decoration. */
 :root {
   --bg: #1a1a1a;
   --fg: #eaeaea;
-  --muted: #888;
+  --muted: var(--fg-muted, #888);
   --accent: #4ade80;
   --marker: #ff3b30;
 }
@@ -21,8 +27,8 @@ body {
   align-items: center;
   height: 24px;
   padding: 0 8px;
-  background: #0f0f0f;
-  border-bottom: 1px solid #2a2a2a;
+  background: var(--bg-elevated, #0f0f0f);
+  border-bottom: 1px solid var(--border, #2a2a2a);
   font-size: 12px;
   flex: 0 0 auto;
 }
@@ -37,16 +43,16 @@ body {
   width: 20px;
   height: 18px;
   margin-left: 4px;
-  background: #2a2a2a;
+  background: color-mix(in srgb, var(--fg, #ddd) 10%, transparent);
   color: var(--fg);
-  border: 1px solid #3a3a3a;
+  border: 1px solid var(--border, #3a3a3a);
   border-radius: 3px;
   cursor: pointer;
   font-size: 14px;
   line-height: 1;
   padding: 0;
 }
-.map-header button:hover { background: #3a3a3a; }
+.map-header button:hover { background: color-mix(in srgb, var(--fg, #ddd) 20%, transparent); }
 .map-header button:disabled { opacity: 0.4; cursor: not-allowed; }
 
 .canvas-wrap {
@@ -64,12 +70,12 @@ body {
 .tooltip {
   position: absolute;
   pointer-events: none;
-  background: rgba(0, 0, 0, 0.85);
+  background: var(--bg-elevated, rgba(0, 0, 0, 0.85));
   color: var(--fg);
   font-size: 11px;
   padding: 3px 6px;
   border-radius: 3px;
-  border: 1px solid #3a3a3a;
+  border: 1px solid var(--border, #3a3a3a);
   white-space: nowrap;
   z-index: 10;
 }

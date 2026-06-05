@@ -1,6 +1,6 @@
 id = "net.mallard.discworld-mapper"
 name = "Discworld Mapper"
-version = "0.1.3"
+version = "0.1.4"
 description = "A minimal minimap plugin for Discworld."
 language = "lua"
 entry = "src/main.lua"
