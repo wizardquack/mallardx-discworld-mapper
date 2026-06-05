@@ -1,21 +1,23 @@
 # Mallard Discworld Mapper
 
-Read-only Quow-parity minimap plugin — Discworld worlds only.
+A minimal minimap plugin for Discworld.
 
 ## Status
 
-v0.1.0 — first release. Renders the current map tile + player marker via `room.info` GMCP frames. Hover tooltip + zoom controls included. Click-to-act, speedwalk, bookmarks, hotspots, NPC/item search, and ASCII surround-map are deliberately out of scope.
+Early release. Renders the current map tile + player marker via `room.info` GMCP frames. Hover tooltip + zoom controls included.
+
+Click-to-act, speedwalk, bookmarks, hotspots, NPC/item search, and ASCII surround-map are deliberately out of scope for now. It's just minimal read-only functionality to show you where you are.
 
 ## Attribution
 
 This plugin redistributes:
 
-- Map PNG bundle (`ui/maps/*.png`) — © Quow, used with explicit written permission (correspondence dated 2026-05-20).
+- Map PNG bundle (`ui/maps/*.png`) — Quow
 - Room dictionary (`ui/data/rooms.js`) — derived from Quow's `_quowmap_database.db`, same permission.
 
-Source: https://quow.co.uk/ (`quow_cowbar.zip`). The data is converted at build time by `scripts/build-room-db.mjs`; original files are not redistributed verbatim.
+Source: https://quow.co.uk/ (`quow_cowbar.zip`). The data is converted at build time by `scripts/build-room-db.mjs`, but original files are redistributed as well per Quow's request.
 
-## Building the room database
+## Development info: building the room database
 
 ```sh
 npm install
